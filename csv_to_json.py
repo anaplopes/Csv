@@ -3,12 +3,12 @@ import csv, json
 
 class Csv:
     
-    def __init__(self):
-        self.csvFilePath = 'csvFilePath.csv'
-        self.jsonFilePath = 'jsonFilePath.json'
+    def __init__(self, csvFilePath, jsonFilePath):
+        self.csvFilePath = csvFilePath
+        self.jsonFilePath = jsonFilePath
         
     def read_csv(self):
-        with open(self.csvFilePath, newline='', encoding='utf-8') as csvFile:
+        with open(self.csvFilePath, newline='') as csvFile:
             csvRead = csv.reader(csvFile, delimiter=';')
             data = []
             
@@ -24,6 +24,14 @@ class Csv:
             print('Finished')
             return data
 
+
     def create_json(self):
         with open(self.jsonFilePath, 'w') as jsonFile:
-            jsonFile.write(json.dumps(data, indent=4))
+            jsonFile.write(json.dumps(self.read_csv(), indent=4))
+
+
+if __name__ == '__main__':
+    c = 'path.csv'
+    j = 'path.json'
+    new = Csv(c, j).create_json()
+    
