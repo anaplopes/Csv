@@ -14,11 +14,11 @@ class Csv:
             
             for row in csvRead:
                 data.append({
-                    "_id": row[0],
-                    "matricula": row[1],
-                    "nome": row[2],
-                    "cargo": row[3],
-                    "site":row[4]
+                    "a": row[0],
+                    "b": row[1],
+                    "c": row[2],
+                    "d": row[3],
+                    "e":row[4]
                     })
                 
             print('Finished')
