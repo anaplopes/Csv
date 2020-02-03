@@ -1,6 +1,7 @@
 # Csv
 
 Converte data.csv em data.json
+Lê data.csv e insere no mongodb
 
 
 **Obs:**
